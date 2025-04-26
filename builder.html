@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Build your worst resume ever and celebrate your glorious failures with Flop Resume Builder">
+    <title>Resume Builder - Flop Resume Builder</title>
+    
+    <!-- Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/resume.css">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="js/config.js" defer></script>
+    <script src="js/utils.js" defer></script>
+    <script src="js/resumeTemplates.js" defer></script>
+    <script src="js/themeConfig.js" defer></script>
+    <script src="js/randomContent.js" defer></script>
+    
+    <!-- Components -->
+    <script src="js/components/Modal.js" defer></script>
+    <script src="js/components/FormManager.js" defer></script>
+    
+    <!-- Services -->
+    <script src="js/services/PDFExporter.js" defer></script>
+    
+    <!-- Main App -->
+    <script src="js/resumeBuilder.js" defer></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+        .font-comic {
+            font-family: 'Comic Neue', cursive;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main class="container py-8">
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Form Section -->
+            <section class="bg-white rounded-xl shadow-lg p-6">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-bold text-gray-800">Build Your Flop Resume</h2>
+                        <div class="flex gap-4">
+                            <button type="button" id="autoFlopButton"
+                                    class="theme-secondary-button px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 hover-scale">
+                                <span>🎲</span> Random Autoflop Me
+                            </button>
+                            <button type="button" id="exportButton"
+                                    class="theme-primary-button px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 hover-scale">
+                                <span>📄</span> Export PDF
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Theme Selector -->
+                    <div class="flex justify-end items-center gap-3">
+                        <label for="themeSelector" class="text-sm font-medium text-gray-600">Resume Theme:</label>
+                        <select id="themeSelector" 
+                                class="form-select px-3 py-1.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 
+                                       rounded-lg shadow-sm focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                            <option value="officeRetro">Office Retro</option>
+                            <option value="comicStyle">Comic Style</option>
+                        </select>
+                    </div>
+                </div>
+                <form id="resumeForm" class="space-y-6">
+                    <!-- Form fields will be dynamically generated -->
+                </form>
+            </section>
+
+            <!-- Preview Section -->
+            <section class="bg-white rounded-xl shadow-lg p-6 print:shadow-none print:p-0">
+                <div id="resumePreview" class="space-y-6 print:space-y-4">
+                    <!-- Preview content will be dynamically generated -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="relative bg-white rounded-xl p-8 max-w-md mx-4 transform transition-all duration-300 scale-0 opacity-0">
+            <!-- Close Button -->
+            <button id="closeModalButton" 
+                    class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors
+                           w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+
+            <div class="text-center space-y-6">
+                <!-- Fun Icon -->
+                <div class="text-6xl animate-bounce">
+                    🎉
+                </div>
+                
+                <!-- Title -->
+                <h2 class="text-3xl font-bold text-purple-600 font-comic">
+                    Congratulations, You're Officially a Flop!
+                </h2>
+                
+                <!-- Message -->
+                <p class="text-lg text-gray-600">
+                    Your flop resume is ready. Want to make another?
+                </p>
+                
+                <!-- Buttons -->
+                <div class="space-x-4">
+                    <button id="createAnotherButton"
+                            class="px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white rounded-xl
+                                   font-medium transform transition hover:scale-105 hover:rotate-1">
+                        Create Another Flop Resume
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize the resume builder
+        document.addEventListener('DOMContentLoaded', () => {
+            const builder = new ResumeBuilder();
+        });
+    </script>
+</body>
+</html>

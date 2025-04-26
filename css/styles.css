@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+/* Base styles */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Custom animations */
+@keyframes gentle-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Custom utility classes */
+.animate-gentle-bounce {
+    animation: gentle-bounce 2s infinite ease-in-out;
+}
+
+/* Hero section specific styles */
+.hero-title {
+    background: linear-gradient(to right, #4F46E5, #7C3AED);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-button {
+    transition: all 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4);
+}
+
+/* Resume Preview Styles */
+#resumePreview {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+#resumePreview h1 {
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+#resumePreview h2 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: none;
+        padding: 2.5cm;
+    }
+
+    header, footer, #resumeForm {
+        display: none;
+    }
+
+    #resumePreview {
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #resumePreview h2 {
+        break-after: avoid;
+    }
+}

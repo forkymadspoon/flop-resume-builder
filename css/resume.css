@@ -1,0 +1,78 @@
+/* Resume Preview Styles */
+#resumePreview {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+#resumePreview h1 {
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+#resumePreview h2 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.resume-section {
+    margin-bottom: 1.5rem;
+}
+
+.resume-section-content {
+    color: #4B5563;
+    white-space: pre-wrap;
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    header, 
+    footer, 
+    #resumeForm,
+    #themeSelector,
+    #autoFlopButton,
+    .print-hide {
+        display: none !important;
+    }
+
+    #resumePreview {
+        box-shadow: none !important;
+        padding: 20mm !important;
+        margin: 0 !important;
+        width: 210mm !important; /* A4 width */
+        min-height: 297mm !important; /* A4 height */
+        background-color: white !important;
+    }
+
+    #resumePreview h1 {
+        font-size: 24pt !important;
+        margin-bottom: 10mm !important;
+    }
+
+    #resumePreview h2 {
+        font-size: 16pt !important;
+        margin-top: 8mm !important;
+        margin-bottom: 4mm !important;
+        break-after: avoid !important;
+        page-break-after: avoid !important;
+    }
+
+    .resume-section {
+        margin-bottom: 6mm !important;
+        page-break-inside: avoid !important;
+    }
+
+    .resume-section-content {
+        font-size: 11pt !important;
+        line-height: 1.5 !important;
+    }
+}

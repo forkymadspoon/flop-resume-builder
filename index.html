@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Build your worst resume ever and celebrate your glorious failures with Flop Resume Builder">
+    <title>Flop Resume Builder - Celebrate Your Failures</title>
+    
+    <!-- Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/base.css">
+    
+    <!-- Scripts -->
+    <script src="js/config.js" defer></script>
+    <script src="js/utils.js" defer></script>
+    <script src="js/landingTemplates.js" defer></script>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Main Content -->
+    <main class="min-h-screen flex flex-col items-center justify-center px-4 py-16">
+        <div class="container max-w-4xl mx-auto text-center">
+            <div id="heroSection">
+                <!-- Hero content will be dynamically generated -->
+            </div>
+
+            <div id="featureSection">
+                <!-- Feature content will be dynamically generated -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+        // Initialize landing page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Generate and insert content
+            document.getElementById('heroSection').innerHTML = LandingTemplates.generateHeroHTML();
+            document.getElementById('featureSection').innerHTML = LandingTemplates.generateFeatureHTML();
+        });
+    </script>
+</body>
+</html>
