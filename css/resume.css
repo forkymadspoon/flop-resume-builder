@@ -29,50 +29,18 @@
 
 /* Print styles */
 @media print {
-    body {
-        background: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    header, 
-    footer, 
-    #resumeForm,
-    #themeSelector,
-    #autoFlopButton,
-    .print-hide {
-        display: none !important;
-    }
-
-    #resumePreview {
-        box-shadow: none !important;
-        padding: 20mm !important;
-        margin: 0 !important;
-        width: 210mm !important; /* A4 width */
-        min-height: 297mm !important; /* A4 height */
-        background-color: white !important;
-    }
-
-    #resumePreview h1 {
-        font-size: 24pt !important;
-        margin-bottom: 10mm !important;
-    }
-
-    #resumePreview h2 {
-        font-size: 16pt !important;
-        margin-top: 8mm !important;
-        margin-bottom: 4mm !important;
-        break-after: avoid !important;
-        page-break-after: avoid !important;
-    }
-
     .resume-section {
-        margin-bottom: 6mm !important;
-        page-break-inside: avoid !important;
+        break-inside: avoid;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .resume-section h2 {
+        font-size: 14pt;
     }
 
     .resume-section-content {
-        font-size: 11pt !important;
-        line-height: 1.5 !important;
+        font-size: 12pt;
+        line-height: 1.5;
     }
 }

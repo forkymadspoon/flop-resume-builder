@@ -1,0 +1,86 @@
+/* Button base styles */
+.theme-primary-button,
+.theme-secondary-button {
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Primary button */
+.theme-primary-button {
+    background: linear-gradient(to right, #4F46E5, #7C3AED);
+    color: white;
+}
+
+.theme-primary-button:hover {
+    background: linear-gradient(to right, #4338CA, #6D28D9);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Secondary button */
+.theme-secondary-button {
+    background: white;
+    color: #4F46E5;
+    border: 2px solid #4F46E5;
+}
+
+.theme-secondary-button:hover {
+    background: #F3F4F6;
+    border-color: #4338CA;
+    color: #4338CA;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Disabled state */
+.theme-primary-button:disabled,
+.theme-secondary-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Button sizes */
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.btn-md {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+
+/* Button with icon */
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-icon svg,
+.btn-icon span {
+    flex-shrink: 0;
+}
+
+/* Button group */
+.btn-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .btn-group {
+        flex-direction: column;
+    }
+    
+    .theme-primary-button,
+    .theme-secondary-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
